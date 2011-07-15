@@ -1,0 +1,9 @@
+<div id="tabs" role="tabs">
+  <ul>
+    <li <%= controller.action_name == "registration" ? "class='active'" : "" %>><span class="number">1</span><span class="title">Create an Account</span></li>
+    <li <%= @order.address?  && controller.action_name != "registration" ? "class='active'" : "" %>><span class="number">2</span><span class="title">Your Address</span></li>
+    <li <%= @order.delivery?  && controller.action_name != "registration" ? "class='active'" : "" %>><span class="number">3</span><span class="title">Shipping Options</span></li>
+    <li <%= @order.payment?  && controller.action_name != "registration" ? "class='active'" : "" %>><span class="number">4</span><span class="title">Payment Options</span></li>
+    <li <%= @order.confirm? && controller.action_name != "registration" ? "class='active number'" : "class=number" %>><span class="number">5</span><span class="title">Place Order</span></li>
+  </ul>
+</div>
