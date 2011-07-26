@@ -129,7 +129,7 @@ body#cart p.actions, body#cart p.actions a {
   margin-bottom: 4px;
 }
 #edit_wishlist input[type="checkbox"] {
-  vertical-align: text-top
+  vertical-align: baseline;
 }
 #edit_wishlist div {
   float: left;

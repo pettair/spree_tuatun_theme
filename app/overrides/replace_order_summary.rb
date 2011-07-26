@@ -1,4 +1,7 @@
-<div id="aside" role="aside">
+Deface::Override.new(:virtual_path => %q{checkout/_summary},
+                          :name => %q{replace_order_summary'},
+                          :replace => %q{[data-hook='order_summary']},
+                          :text => %q{<div id="aside" role="aside">
   <div id="order" role="order">
 
     <h3><%= t(:order_summary) %></h3>
@@ -32,4 +35,4 @@
     </table>
 
   </div>
-</div>
+</div>})

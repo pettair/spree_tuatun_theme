@@ -1,6 +1,8 @@
-<% content_for :javascripts do %>
+Deface::Override.new(:virtual_path => %q{checkout/_address},
+                          :name => %q{replace_billing},
+                          :replace => %q{#billing[data-hook]},
+                          :text => %q{<% content_for :javascripts do %>
   <%= javascript_include_tag 'checkout', '/states' %>
-
 <% end %>
 
 <div id="content" role="content">
@@ -146,5 +148,4 @@
 
   <% end %>
   <div class="submit"><button type="submit" class="blue">Continue</button></div>
-</div>
-
+</div>})

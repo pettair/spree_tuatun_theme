@@ -1,5 +1,7 @@
-<%= render "shared/error_messages", :target => @order %>
-<table id="cart-detail" data-hook>
+Deface::Override.new(:virtual_path => %q{orders/_form},
+                          :name => %q{replace_cart_detail},
+                          :replace => %q{#cart-detail[data-hook]},
+                          :text => %q{<table id="cart-detail" data-hook>
   <thead>
     <tr data-hook="cart_items_headers">
       <th colspan="2"><%= t("item") %></th>
@@ -29,5 +31,4 @@
       </td>
     </tr>
   </tbody>
-</table>
-
+</table>})

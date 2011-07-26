@@ -2,7 +2,7 @@ Deface::Override.new(:virtual_path => %q{layouts/spree_application},
                           :name => %q{replace_body},
                           :replace => %q{[data-hook='body']},
                           :closing_selector => %q{},
-                          :text => %q{<body id="<%= @body_id || controller.controller_name %>">
+                          :text => %q{<body id="<%= (@body_id == 'signup' ? 'checkout' : @body_id) || controller.controller_name %>">
     <div id="container">
         <header>
           <%= link_to image_tag("/assets/logo.png", :width => "300", :height => "58", :alt => "Rails Dog Radio", :id => "logo"), root_url %>

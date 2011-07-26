@@ -1,4 +1,7 @@
-<div id="content" role="content">
+Deface::Override.new(:virtual_path => %q{checkout/_delivery},
+                          :name => %q{replace_shipping_method},
+                          :replace => %q{#shipping_method[data-hook]},
+                          :text => %q{<div id="content" role="content">
   <h2>Choose A Shipping Method</h2>
   <ul class="fields">
 
@@ -21,6 +24,4 @@
   </ul>
 
   <div class="submit"><button type="submit" class="blue">Continue</button></div>
-<div>
-
-
+</div>})

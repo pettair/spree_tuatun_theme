@@ -1,4 +1,7 @@
-<tr class="<%= cycle('', 'alt') %>">
+Deface::Override.new(:virtual_path => %q{orders/_line_item},
+                          :name => %q{replace_line_item},
+                          :replace => %q{tr},
+                          :text => %q{<tr class="<%= cycle('', 'alt') %>">
   <td data-hook="cart_item_image">
     <% if variant.images.length == 0 %>
       <%= small_image(variant.product) %>
@@ -28,4 +31,4 @@
   <td class="total" data-hook="cart_item_delete">
     <%= link_to("Remove", '#', :class => 'delete button') %>
   </td>
-</tr>
+</tr>})

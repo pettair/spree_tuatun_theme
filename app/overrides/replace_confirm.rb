@@ -1,4 +1,7 @@
-<div id="content" role="content">
+Deface::Override.new(:virtual_path => %q{checkout/_confirm},
+                          :name => %q{replace_confirm},
+                          :replace => %q{#order_details[data-hook]},
+                          :text => %q{<div id="content" role="content">
   <div id="order-items" style="padding:0 30px 30px 0">
     <h2>Items In Your Order</h2>
     <ul>
@@ -55,4 +58,4 @@
   <div class="submit">
     <button class="blue" type="submit">Place your order</button>
   </div>
-</div>
+</div>})
