@@ -1,6 +1,6 @@
-module RailsdogRadioTheme
+module SpreeTuatunThemeTheme
   class Engine < Rails::Engine
-    railtie_name "railsdog_radio_theme"
+    railtie_name "spree_tuatun_theme"
 
     config.autoload_paths += %W(#{config.root}/lib)
 
