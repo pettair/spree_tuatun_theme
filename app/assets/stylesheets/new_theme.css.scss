@@ -1,0 +1,111 @@
+/*
+=======================================================================
+	Wrapper Section Rules
+=======================================================================
+*/
+#wrapper_sec {
+	width:960px;
+	margin:0px auto;
+}
+
+a {
+    text-shadow: rgba(100,100,100,1) 1px 1px 2px;
+}
+
+header.masthead {
+    $green: #82BC2F;
+    
+    background: none;
+    
+    #logo {
+        font-family: 'Permanent Marker', cursive;
+        font-weight: 400;
+        font-size: 64px;
+        float: left;
+        a {
+            color: $green;
+            text-shadow: 0px 2px 3px $green * 0.5;
+            &:hover {
+                text-shadow: 0px 2px 5px $green * 0.3;
+            }
+        }
+    }
+    
+    nav {
+        font: normal normal normal 1.1em/1.6em Arvo;
+        float: right;
+        
+        a, a:visited, a:hover {
+            color: #fff;
+        }
+                
+        p {
+        	float:left;
+        	padding:2px 10px 0px 0px;
+        	color:#666666;
+        	a {
+        	    color:#666666 !important;
+        	}
+        }
+
+        ul.links{
+        	float:right;
+        	width:115px;
+        	height:21px;
+        	padding:3px 0px 0px 18px;
+        	list-style:none;
+        	background-image:url(/assets/top_btns.png);
+        	background-repeat:no-repeat;
+        	margin-bottom:17px;
+        	li {
+        	    float:left;
+            	padding-right:5px;
+            	&.last {
+            	    padding-right:0px;
+                	padding-left:10px;
+            	}
+            	a {
+            	    margin: 0;
+            	}
+        	}
+        }
+        .cart_bag {
+            display: block;
+            float: right;
+            width: 250px;
+            
+            a {
+            	color:#fff;
+            	display:inline-block;
+            	width:215px;
+            	height:22px;
+            	padding:7px 0px 0px 35px;
+            	background-image:url(/assets/cart_btn.png);
+            	background-repeat:no-repeat;
+            	z-index:9;
+            	position:absolute;
+            }
+        }
+    }
+
+}
+
+header.menubar {
+    form {
+        float: right;
+        padding: 0;
+        margin: 12px 12px 0px 0px;
+        input {
+            background: #fff url(/assets/search_bg_s1.gif) no-repeat;
+            border: 0;
+            width: 146px;
+            height: 23px;
+            padding: 0 25px 0 10px;
+            color: #333;
+            line-height: 23px;
+            &.empty  {
+                color: #aaa;
+            }
+        }
+    }
+}

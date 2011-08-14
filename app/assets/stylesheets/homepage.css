@@ -3,8 +3,6 @@
 	http://localhost:3000/stylesheets/homepage.css
 */
 
-body#homepage { background-image: url('/assets/bg.jpg') }
-
 #homepage #banner {
   height: 340px;
   position: relative;

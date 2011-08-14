@@ -1,7 +1,3 @@
-body#product-list, body#product-details {
-  background-image: url(/assets/bg.jpg);
-}
-
 body#product-details #banner, body#product-list #banner {
   height: 143px;
   background-repeat: no-repeat;

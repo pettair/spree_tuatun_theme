@@ -6,38 +6,64 @@ Deface::Override.new(:virtual_path => %q{layouts/spree_application},
     <!-- Wrapper Section -->
     <div id="wrapper_sec">
     	<!-- Header Section -->
-    	<div id="masthead">
-        <div class="logo">
-          <%= link_to image_tag("/assets/logo.png", :width => "300", :height => "58", :alt => "Rails Dog Radio", :id => "logo"), root_url %>
+    	<header class="masthead">
+        <div id="logo">
+          <%= link_to "Tuatun", root_url %>
         </div>
-        <div class="topnav">
-          <nav>
-            <%= link_to "products", products_path %>
-            <% if current_user %>
-              <%= link_to t('my_account'), account_path, :class => "cart" %>
-              <%= link_to t('logout'), destroy_user_session_path, :class => "cart" %>
-            <% else %>
-              <%= link_to t('log_in'), login_path, :class => "cart" %>
-            <% end %>
+        <nav>
+          <p>Welcome!
+          <% if current_user %>
+            <%= current_user.login %></p>
+            <ul class="links">
+              <li><%= link_to t('my_account'), account_path%></li>
+              <li><%= link_to t('logout'), destroy_user_session_path, :class => "last" %></li>
+            </ul>
+          <% else %>
+            </p>
+            <ul class="links">
+              <li><%= link_to t('signup'), signup_path %></li>
+              <li class="last"><%= link_to t('log_in'), login_path %></li>
+            </ul>
+          <% end %>
+          <div class="clear"></div>
+          <div class="cart_bag">
             <%= link_to_cart %>
-          </nav>
-      	  <p class="welcm">Welcome! <a href="#" class="white under">User Name</a></p>
-        <ul class="links">
-        	<li><a href="#">Register</a></li>
-            <li class="last"><a href="#">Login</a></li>
-        </ul>
+          </div>
+        </nav>
+      </header>
+      
+      <div class="clear"></div>
+      
+      <header class="menubar">
+        <nav id="smoothmenu1" class="ddsmoothmenu">
+          <ul>
+            <li><%= link_to t('home'), root_path %></li>
+            <li><%= link_to "products", products_path %></li>
+            <li><a href="#">Specials</a>
+              <ul>
+                <li><%= link_to "Test", "#" %></li>
+                <li><%= link_to "Test", "#" %></li>
+                <li><%= link_to "Test", "#" %></li>
+                <li><%= link_to "Test", "#" %></li>
+            	</ul>
+            </li>
+          </ul>
+          <br style="clear: left" />
+        </nav>
+        <form action="#" >
+        </form>
+        <%= form_tag products_url, :method => :get do %>
+          <input type="search" id="s1" class="empty" name="keywords" placeholder="Search Tuatun">
+        <% end %>
         <div class="clear"></div>
+      </header>
         
-        
-        
-    <div id="container">
+      
+      
+      <div id="container">
         <header>
           
-          <form action="#" >
-          </form>
-          <%= form_tag products_url, :method => :get do %>
-            <input type="search" id="s1" class="empty" name="keywords" placeholder="Search Railsdog Radio">
-          <% end %>
+
 
         </header>
         

@@ -1,64 +1,9 @@
 /* @override http://localhost:3000/stylesheets/screen.css */
-body#product_list {
-  background: #fff url(/assets/bg.png) repeat-x;
-}
-
-body {
-  background: #fff url(/assets/narrow_bg.png) repeat-x;
-}
 
 #banner, #container, footer .inner {width: 960px; margin: 0 auto;}
 
-header, footer {background-color: #000;}
-header nav *, footer div#secondary * {display: inline-block;}
-header {
-  position: relative;
-  z-index: 100;
-  height: 58px;
-  margin: 0 auto;
-}
+footer {background-color: #000;}
 
-header form {
-  position: absolute;
-  left: 320px;
-  top: 23px;
-  padding: 0;
-}
-header form input {
-  background: #fff url(/assets/search_bg_s1.gif) no-repeat;
-  border: 0;
-  width: 146px;
-  height: 23px;
-  padding: 0 25px 0 10px;
-  color: #333;
-  line-height: 23px;
-}
-header form input.empty  {
-  color: #aaa;
-} 
-
-
-header #logo {
-  position: absolute;
-  left:  0; top: 11px;
-}
-
-
-
-header nav {
-  position: absolute;
-  right: 0;
-  top: 24px;
-  text-align: right;
-}
-header nav a, header nav a:visited,header nav a:hover {
-  margin: 0 0 0 12px;
-  text-align: right;
-  font: normal normal normal 1.1em/1.6em Arvo;
-  color: #fff;
-}
-
-header nav a.cart {color: #B30000;}
 
 footer {
   background: #fff url('/assets/footer_bkgd.jpg') repeat-x bottom left;

@@ -1,0 +1,118 @@
+header.menubar {
+	width:960px;
+	height:41px;
+	background-image:url(/assets/navi_bg.png);
+	background-repeat:no-repeat;
+	float:left;
+	margin-top:30px;
+	margin-bottom:15px;
+}
+nav.ddsmoothmenu{
+	float:left;
+	font: normal normal normal 1.1em/1.6em Arvo;
+	ul{
+    	z-index:100;
+    	margin: 0;
+    	padding: 0;
+    	list-style-type: none;
+    	li{
+        	position: relative;
+        	display: inline;
+        	float: left;
+        	a{
+            	display: block;
+            	color: white;
+            	padding: 11px 15px;
+            	border-right: 1px solid #558723;
+            	color: #2d2b2b;
+            	text-decoration: none;
+            	font-size:12px;
+            	&:link, &:visited {
+            	    color: white;
+            	}
+            	&.selected{ /*CSS class that's dynamically added to the currently active menu items' LI A element*/
+                	background-image:url(/assets/navi_rol.gif);
+                	background-color:#FFF;
+                	background-repeat:repeat-x;
+                	background-position:top;
+                	color: #000;
+                }
+                &:hover{
+                	/*background-image:url(/assets/navi_rol.gif);*/
+                	background-color: rgba(255,255,255,0.5);
+                	-moz-box-shadow:inset 0 0 10px #000000;
+                    -webkit-box-shadow:inset 0 0 10px #000000;
+                    box-shadow:inset 0 0 10px #000000;
+                	background-repeat:repeat-x;
+                	background-position:top;
+                	color: #000;
+                }
+            }
+        
+            ul{
+            	position: absolute;
+            	left: 0;
+            	display: none; /*collapse all sub menus to begin with*/
+            	visibility: hidden;
+            	background-color:#FFF;
+            	li{
+                	display: list-item;
+                	float: none;
+                	a{
+                    	width: 160px; /*width of sub menus*/
+                    	padding: 7px 10px;
+                    	margin: 0;
+                    	border-top-width: 0;
+                    	border-bottom: 1px dotted #cccccc;
+                    	color:#000 !important;
+                    	border-right:none;
+                    	&:hover{
+                        	background-color:#689c34 !important;
+                        	color:#FFF !important;
+                        	background-image:none;
+                        }
+                    }
+                    ul{
+                    	top: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+* html nav.ddsmoothmenu ul li a{ /*IE6 hack to get sub menu links to behave correctly*/
+	display: inline-block;
+}
+
+/* Holly Hack for IE \*/
+* html .ddsmoothmenu{height: 1%;} /*Holly Hack for IE7 and below*/
+
+
+/* ######### CSS classes applied to down and right arrow images  ######### */
+
+.downarrowclass{
+	position: absolute;
+	top: 12px;
+	right: 7px;
+}
+
+.rightarrowclass{
+	position: absolute;
+	top: 6px;
+	right: 5px;
+}
+
+/* ######### CSS for shadow added to sub menus  ######### */
+
+.ddshadow{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 0;
+	height: 0;
+}
+
+.toplevelshadow{ /*shadow opacity. Doesn't work in IE*/
+	
+}

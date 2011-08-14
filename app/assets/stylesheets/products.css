@@ -1,6 +1,7 @@
 body#product-list h1, body#product-details h1 {
   margin: 0px;
 }
+
 body#product-details #product-images {
   width: 380px;
   margin-bottom: 20px;
