@@ -38,7 +38,7 @@ Deface::Override.new(:virtual_path => %q{layouts/spree_application},
           <%= form_tag products_url, :method => :get do %>
             <input type="search" id="s1" class="empty" name="keywords" placeholder="Search Railsdog Radio">
           <% end %>
-          
+
         </header>
         
         <% if content_for?(:banner) %>
