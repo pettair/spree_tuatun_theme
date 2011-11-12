@@ -6,14 +6,15 @@ Deface::Override.new(:virtual_path => %q{layouts/spree_application},
       <div id="topbar">
         <div class="container">
           <header>
-            <%= link_to image_tag("store/logo.png", :width => "300", :height => "58", :alt => "Rails Dog Radio", :id => "logo"), root_url %>
-            <form action="#" >
-            </form>
-            <%= form_tag products_url, :method => :get do %>
-              <input type="search" id="s1" class="empty" name="keywords" placeholder="Search Railsdog Radio">
-            <% end %>
-            <nav>
-              <%= link_to "products", products_path %>
+            <div id="logo">
+              <%= link_to "Tuatun", root_url %>
+            </div>
+            <nav id="global_nav">
+              <ul>
+                <li><%= link_to "products", products_path %></li>
+              </ul>
+            </nav>
+            <nav id="utility_nav">
               <% if current_user %>
                 <%= link_to t('my_account'), account_path, :class => "cart" %>
                 <%= link_to t('logout'), destroy_user_session_path, :class => "cart" %>
