@@ -7,14 +7,19 @@ body {
   background: #fff url(<%= asset_path 'store/narrow_bg.png' %>) repeat-x;
 }
 
-#banner, #container, footer .inner {width: 960px; margin: 0 auto;}
+#banner, .container, footer .inner {width: 960px; margin: 0 auto;}
+
+#topbar {
+  background: rgb(52,125,30) url(<%= asset_path 'store/sidebanner.png' %>) repeat-x;
+  height: 404px;
+}
 
 header, footer {background-color: #000;}
 header nav *, footer div#secondary * {display: inline-block;}
 header {
   position: relative;
   z-index: 100;
-  height: 58px;
+  height: 79px;
   margin: 0 auto;
 }
 
@@ -59,6 +64,7 @@ header nav a, header nav a:visited,header nav a:hover {
 }
 
 header nav a.cart {color: #B30000;}
+
 
 footer {
   background: #fff url(<%= asset_path 'store/footer_bkgd.jpg' %>) repeat-x bottom left;

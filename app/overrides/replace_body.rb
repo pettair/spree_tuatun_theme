@@ -3,32 +3,38 @@ Deface::Override.new(:virtual_path => %q{layouts/spree_application},
                           :replace => %q{[data-hook='body']},
                           :closing_selector => %q{},
                           :text => %q{<body id="<%= (@body_id == 'signup' ? 'checkout' : @body_id) || controller.controller_name %>">
-    <div id="container">
-        <header>
-          <%= link_to image_tag("store/logo.png", :width => "300", :height => "58", :alt => "Rails Dog Radio", :id => "logo"), root_url %>
-          <form action="#" >
-          </form>
-          <%= form_tag products_url, :method => :get do %>
-            <input type="search" id="s1" class="empty" name="keywords" placeholder="Search Railsdog Radio">
-          <% end %>
-          <nav>
-            <%= link_to "products", products_path %>
-            <% if current_user %>
-              <%= link_to t('my_account'), account_path, :class => "cart" %>
-              <%= link_to t('logout'), destroy_user_session_path, :class => "cart" %>
-            <% else %>
-              <%= link_to t('log_in'), login_path, :class => "cart" %>
+      <div id="topbar">
+        <div class="container">
+          <header>
+            <%= link_to image_tag("store/logo.png", :width => "300", :height => "58", :alt => "Rails Dog Radio", :id => "logo"), root_url %>
+            <form action="#" >
+            </form>
+            <%= form_tag products_url, :method => :get do %>
+              <input type="search" id="s1" class="empty" name="keywords" placeholder="Search Railsdog Radio">
             <% end %>
-            <%= link_to_cart %>
-          </nav>
-        </header>
-        
-        <% if content_for?(:banner) %>
-          <div id="banner" role="banner">
-            <%= yield :banner %>
-          </div>
-        <% end %>
-        
+            <nav>
+              <%= link_to "products", products_path %>
+              <% if current_user %>
+                <%= link_to t('my_account'), account_path, :class => "cart" %>
+                <%= link_to t('logout'), destroy_user_session_path, :class => "cart" %>
+              <% else %>
+                <%= link_to t('log_in'), login_path, :class => "cart" %>
+              <% end %>
+              <%= link_to_cart %>
+            </nav>
+
+          </header>
+
+          <% if content_for?(:banner) %>
+            <div id="banner" role="banner">
+              <%= yield :banner %>
+            </div>
+          <% end %>
+      </div>
+    </div>
+                            
+                            
+    <div class="container">
         <div id="main" role="main">
           <% if flash.notice %>
             <div class="flash notice"><%= flash.notice %></div>
