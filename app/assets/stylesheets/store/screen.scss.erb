@@ -10,10 +10,18 @@ $grey:  #f0f0f0;
   border-radius: $radius;
 }
 
-@mixin shadow($radius: 10px, $colour: #aaa) {
-    -moz-box-shadow: 0 0 $radius $radius $colour;
-    -webkit-box-shadow: 0 0 $radius $radius $colour;
-    box-shadow: 0 0 $radius $radius $colour;
+@mixin shadow($radius: 10px, $colour: #aaa, $x-offset: 0, $y-offset: 0) {
+    -moz-box-shadow: $x-offset $y-offset $radius $radius $colour;
+    -webkit-box-shadow: $x-offset $y-offset $radius $radius $colour;
+    box-shadow: $x-offset $y-offset $radius $radius $colour;
+}
+
+
+@mixin gradient($start, $end) {
+    background-color: $start;
+    background: -webkit-gradient(linear, left top, left bottom, from($start), to($end));
+    background: -moz-linear-gradient(top,  $start,  $end);
+    filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='$start', endColorstr='$end');
 }
 
 
@@ -22,7 +30,7 @@ body#product_list {
 }
 
 body {
-    font-family: Helvetica, Helvetica, sans-serif;
+    font-family: Helvetica, sans-serif;
     background-color: $grey;
 }
 
@@ -93,31 +101,11 @@ header nav {
 
 header nav a.cart {color: #B30000;}
 
-#banner {
-    background: url(<%= asset_path 'store/bigbanner.png' %>);
-    height: 325px;
-    
-    .intro {
-        position: absolute;
-        top: 120px;
-        width: 261px;
-        z-index: 3;
-        color: white;
-        h1 {
-            font-size: 250%;
-            margin-bottom: 30px;
-        }
-        p {
-            font-size: 120%;
-        }
-    }
-}
-
 #page {
     background-color: white;
     padding: 25px;
-    @include shadow(8px, #bbb);
-    overflow: visible;
+    @include shadow(5px, #ccc);
+    overflow: hidden;
 }
 
 
@@ -155,7 +143,7 @@ footer #copyright {
   color: #364D8C;
 }
 .list-box h2, #homepage #contact h2 {
-  font-family: Arvo;
+  font-family: 'Cabin', sans-serif;
   font-size: 170%;
   text-transform: uppercase;
   font-weight: normal;
@@ -196,19 +184,31 @@ footer #copyright {
 
 
 
-
+$button-blue: #0095DA;
 button, a.button {
   border: none;
-  background-color: #0095DA;
+  background: $button-blue;
   color: #fff!important;
   padding: 10px 18px 9px 18px;
   font-size: 16px;
-  font-family: Arvo;
+  font-family: 'Cabin', sans-serif;
   text-transform: uppercase;
   border-radius: 4px;
   -moz-border-radius: 4px;
   -webkit-border-radius: 4px;
   font-weight: normal;
+  border: 1px solid $button-blue;
+  
+  &:hover {
+      @include gradient($button-blue, $button-blue*0.8);
+      border: 1px solid $button-blue*0.8;
+      @include shadow(1px, #eee, 0, 1px);
+  }
+  
+  &:active {
+      @include gradient($button-blue*0.9, $button-blue*0.7);
+      border: 1px solid $button-blue*0.8;
+  }
 }
 a.button {
   text-decoration: none;

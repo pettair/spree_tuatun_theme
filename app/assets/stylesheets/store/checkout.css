@@ -64,7 +64,8 @@ body#checkout div[role='checkout'] div[role='title'] {
   margin: 40px 0 20px 0;
   letter-spacing:2px;
   color: #d4d4d4;
-  font: 40px Arvo, Georgia, "Times New Roman", Times, serif;
+  /*font: 40px Arvo, Georgia, "Times New Roman", Times, serif;*/
+  font: 40px 'Cabin', sans-serif;
 
 }
 
@@ -78,7 +79,7 @@ body#checkout div[role='checkout'] div#tabs {
 
 body#checkout div[role="checkout"] div#tabs ul {
   margin: 0;
-  font: 45px "Arvo", sans-serif;
+  font: 45px 'Cabin', sans-serif;
 }
 
 body#checkout div[role='checkout'] div#tabs li {
@@ -135,7 +136,7 @@ body#checkout div[role='content'] {
 }
 
 body#checkout div[role='content'] h2 {
-  font: 28px Arvo;
+  font: 28px 'Cabin';
   color: #747474;
   margin: 0px;
   padding: 0px 0px 20px 0px;
@@ -171,7 +172,7 @@ body#checkout div[role='content'] ul.fields li.options {
 body#checkout div[role='content'] ul.fields li.options label {
   display: inline;
   vertical-align: -5px;
-  font: 22px Arvo;
+  font: 22px 'Cabin';
   margin-left: 15px;
 }
 
@@ -221,7 +222,7 @@ body#checkout div[role='aside'] {
 
 body#checkout div[role='aside'] h3 {
   color: #0095da;
-  font: 24px Arvo;
+  font: 24px 'Cabin';
   margin: 10px 5px 10px 15px;
   padding: 0 0 10px 0;
 }
